@@ -1,0 +1,26 @@
+{
+  "name": "omni-interest-fetcher",
+  "version": "1.0.0",
+  "description": "Simple contract for fetching accrued interest in Omnibridge and xDAI bridge through AMB",
+  "main": "index.js",
+  "author": "xDAI dev team",
+  "license": "CC0-1.0",
+  "scripts": {
+    "compile": "truffle compile",
+    "deploy-xdai": "truffle migrate --network xdai",
+    "lint": "solhint --max-warnings 0 \"contracts/**/*.sol\""
+  },
+  "prettier": {
+    "printWidth": 120
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.3.2",
+    "@truffle/hdwallet-provider": "^1.5.1",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.4.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.18",
+    "solhint": "^3.3.6",
+    "solhint-plugin-prettier": "^0.0.5",
+    "truffle": "^5.4.15"
+  }
+}
