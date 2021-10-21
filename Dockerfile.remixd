@@ -1,0 +1,15 @@
+FROM node:14
+
+WORKDIR /workdir
+
+COPY package.json yarn.lock ./
+RUN yarn install --prod
+
+# Allows remixd to be run within a docker container
+RUN sed -i s/127.0.0.1/0.0.0.0/g node_modules/@remix-project/remixd/websocket.js
+
+COPY ./contracts ./contracts
+
+EXPOSE 65520
+
+ENV PATH="/workdir:/workdir/node_modules/.bin:${PATH}"
