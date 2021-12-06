@@ -12,6 +12,7 @@ abstract contract BasicAMBInformationReceiver is IAMBInformationReceiver, AMBInf
         bytes memory _result
     ) external override {
         require(msg.sender == address(bridge));
+        require(bridge.messageId() == bytes32(0));
         if (_status) {
             onResultReceived(_messageId, _result);
         }
